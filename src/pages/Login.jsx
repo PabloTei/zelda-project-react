@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./Login.css";
 
 
 const Login = () => {
@@ -7,7 +8,7 @@ const Login = () => {
     const navigate = useNavigate();
     
     return (
-        <div>
+        <div className="login">
             <input
             type="text"
             onChange={(ev) => setUser(ev.target.value)}
