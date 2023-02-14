@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import "./Equipment.css"
 import Logout from "../components/Logout";
 import axios from "axios"
 
