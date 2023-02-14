@@ -15,12 +15,12 @@ const Login = () => {
             type="text"
             onChange={(ev) => setUser(ev.target.value.toUpperCase())}
             ></input>
-            <button
+            {user !== null ?             <button
             onClick={() => {
                 localStorage.setItem("user", user);
                 navigate("/home")
             }}
-            >Login</button>
+            >Login</button> : <p>Por favor, introduce tu nombre</p>}
             </div>
         </div>
     )
