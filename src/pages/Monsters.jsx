@@ -1,4 +1,5 @@
 import Preview from "../components/Preview";
+import "./Monsters.css"
 import Logout from "../components/Logout";
 import { useEffect, useState } from "react";
 import axios from "axios"
