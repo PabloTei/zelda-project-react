@@ -9,9 +9,11 @@ const Login = () => {
     
     return (
         <div className="login">
+            <h3>INTRODUCE TU NOMBRE</h3>
+            <div className="button-input">
             <input
             type="text"
-            onChange={(ev) => setUser(ev.target.value)}
+            onChange={(ev) => setUser(ev.target.value.toUpperCase())}
             ></input>
             <button
             onClick={() => {
@@ -19,6 +21,7 @@ const Login = () => {
                 navigate("/home")
             }}
             >Login</button>
+            </div>
         </div>
     )
 }

@@ -1,5 +1,19 @@
 .login {
     display: flex;
     flex-direction: column;
-    gap: 2rem
+    gap:1rem;
+}
+
+.button-input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:1rem
+}
+
+body {
+    background-image: url(https://res.cloudinary.com/depifliz3/image/upload/v1676406699/samples/landscapes/the-legend-of-zelda-breath-of-the-wild_2560x1440_xtrafondos.com_vhke1h.jpg);
+    background-size: 100%;
+    
 }
