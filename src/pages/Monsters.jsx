@@ -23,7 +23,7 @@ const Monsters = () => {
     
     return (
         <main className="monsters">
-            <h1>MONSTERS</h1>
+            <h1 className="titulo-monsters">MONSTERS</h1>
                 {monsters.map((monster) => 
                 <figure key={monster.id}>
                     <img src={monster.image} alt={monster.name}/>
