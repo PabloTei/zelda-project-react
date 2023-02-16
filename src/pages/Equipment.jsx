@@ -4,7 +4,9 @@ import Logout from "../components/Logout";
 import axios from "axios"
 
 
+
 const Equipment = () => {
+
     const [objects, setObjects] = useState([]);
     const [filter, setFilter] = useState([]);
 
@@ -24,6 +26,12 @@ const Equipment = () => {
         setFilter(filter)
     }
 
+    const filterEquipment = (value) => {
+        const type = objects.filter((object) => (object.name.includes(value)) || object.description.includes(value));
+        setFilter(type);
+    }
+
+
     return (
         <main className="equipment">
             <h1>EQUIPMENT</h1>
@@ -33,12 +41,32 @@ const Equipment = () => {
                 filterFunction(ev.target.value)
             }}
             />
-             <button
-             onClick={() => {
-                const sword = filter.filter((object) => object.name.includes("sword") || object.description.includes("sword"));
-                setFilter(sword)
-             }}
-             >Sword</button>
+            <button
+            onClick={(ev) => {
+                filterEquipment("sword")
+            }}
+            >Swords</button>
+                        <button
+            onClick={(ev) => {
+                filterEquipment("axe")
+            }}
+            >Axes</button>
+                        <button
+            onClick={(ev) => {
+                filterEquipment("shield")
+            }}
+            >Shields</button>
+                        <button
+            onClick={(ev) => {
+                filterEquipment("spear")
+            }}
+            >Spears</button>
+                        <button
+            onClick={(ev) => {
+                filterEquipment("club")
+            }}
+            >Clubs</button>
+
                 {filter.map((object) => 
                 <figure key={object.id}>
                     <img src={object.image} alt={object.name}/>
