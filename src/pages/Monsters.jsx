@@ -7,6 +7,7 @@ import axios from "axios"
 
 const Monsters = () => {
     const [monsters, setMonsters] = useState([]);
+    const [filterMonsters, setFilterMonsters] = useState([]);
 
     const getMonsters = async () => {
         const res = await axios.get(
@@ -14,17 +15,29 @@ const Monsters = () => {
         );
         const data = res.data.data;
         setMonsters(data);
+        setFilterMonsters(data);
       };
       
       useEffect(() => {
         getMonsters();
       }, []);
+
+      const filterMonsters1 = (value) => {
+        const arrayFilter = monsters.filter((monster) => monster.name.includes(value));
+        setFilterMonsters(arrayFilter);
+      }
    
     
     return (
         <main className="monsters">
             <h1 className="titulo-monsters">MONSTERS</h1>
-                {monsters.map((monster) => 
+            <input
+              type="text"
+              onChange={(ev) => {
+                filterMonsters1(ev.target.value)
+              }}
+            />
+                {filterMonsters.map((monster) => 
                 <figure key={monster.id}>
                     <img src={monster.image} alt={monster.name}/>
                     <h2>{monster.name.toUpperCase()}</h2>
