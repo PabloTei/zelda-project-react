@@ -33,6 +33,12 @@ const Equipment = () => {
                 filterFunction(ev.target.value)
             }}
             />
+             <button
+             onClick={() => {
+                const sword = filter.filter((object) => object.name.includes("sword") || object.description.includes("sword"));
+                setFilter(sword)
+             }}
+             >Sword</button>
                 {filter.map((object) => 
                 <figure key={object.id}>
                     <img src={object.image} alt={object.name}/>

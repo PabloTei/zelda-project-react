@@ -37,6 +37,7 @@ const Monsters = () => {
                 filterMonsters1(ev.target.value)
               }}
             />
+          
                 {filterMonsters.map((monster) => 
                 <figure key={monster.id}>
                     <img src={monster.image} alt={monster.name}/>
